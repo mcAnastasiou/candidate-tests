@@ -1,7 +1,6 @@
 @import 'helpers/functions';
 @import 'base/color';
-
-$header-height: px-to-rem(40);
+@import 'base/variables';
 
 .main-header {
   width: 100%;
@@ -9,14 +8,14 @@ $header-height: px-to-rem(40);
   top: 0;
   left: 0;
   background-color: black;
-  padding: 0.5rem 1rem;
+  padding: px-to-rem(8) 1rem;
   z-index: 1;
   font-size: px-to-rem(20);
   font-weight: bold;
   height: $header-height;
 
   div {
-    line-height: $header-height;
+    line-height: calc(#{$header-height} - #{px-to-rem(16)});
     display: inline-block;
     color: $font-white;
   }
