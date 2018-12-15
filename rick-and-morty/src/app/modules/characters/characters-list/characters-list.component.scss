@@ -1,0 +1,32 @@
+@import 'helpers/functions';
+
+.table-wrapper {
+  padding: px-to-rem(15);
+
+  table {
+    width: 95%;
+    margin: auto;
+    background: #fff;
+    border-radius: px-to-rem(5);
+    text-align: center;
+
+    th {
+      font-size: px-to-rem(18);
+      background: rgb(214, 214, 214);
+      padding: px-to-rem(4);
+    }
+
+    td {
+      padding: px-to-rem(4);
+    }
+
+    tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      width: px-to-rem(60);
+      height: px-to-rem(60);
+    }
+  }
+}

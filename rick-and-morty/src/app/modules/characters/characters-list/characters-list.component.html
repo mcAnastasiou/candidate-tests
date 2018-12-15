@@ -1,0 +1,33 @@
+<div class="table-wrapper">
+  <table>
+    <tr>
+        <th colspan="11">Rick and Morty characters</th>
+      </tr>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Species</th>
+      <th>Type</th>
+      <th>Gender</th>
+      <th>Origin</th>
+      <th>Location</th>
+      <th>Episodes</th>
+      <th>Created</th>
+      <th>Image</th>
+    </tr>
+    <tr *ngFor="let character of results;let i = index;">
+      <td>{{i + 1}}</td>
+      <td>{{character.name}}</td>
+      <td>{{character.status}}</td>
+      <td>{{character.species}}</td>
+      <td>{{character.type}}</td>
+      <td>{{character.gender}}</td>
+      <td>{{character.origin?.name}}</td>
+      <td>{{character.location?.name}}</td>
+      <td>{{getNumberOfEpisodes(character)}}</td>
+      <td>{{character.created | date: 'dd/MM/yyyy'}}</td>
+      <td><img class="image" [src]="character.image"></td>
+    </tr>
+  </table>
+</div>
