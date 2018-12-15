@@ -1,0 +1,24 @@
+@import 'helpers/functions';
+@import 'base/color';
+
+$header-height: px-to-rem(40);
+
+.main-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  font-size: px-to-rem(20);
+  font-weight: bold;
+  height: $header-height;
+
+  div {
+    line-height: $header-height;
+    display: inline-block;
+    color: $font-white;
+  }
+}
+
