@@ -1,0 +1,15 @@
+@import 'helpers/functions';
+
+.buttons-wrapper {
+  padding-top: px-to-rem(20);
+  width: px-to-rem(300);
+  margin: auto;
+
+  button {
+    width: px-to-rem(100);
+  }
+
+  button:first-child {
+    margin-right: px-to-rem(10);
+  }
+}
