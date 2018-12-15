@@ -22,4 +22,15 @@ export class CharactersService {
       })
     );
   }
+
+  getPageCharacters(page: string):  Observable<RootObject> {
+    return this.httpClient.get<RootObject>(page).pipe(
+      map((response: RootObject) => {
+        if (response) {
+          return response;
+        }
+        return new RootObject();
+      })
+    );
+  }
 }
