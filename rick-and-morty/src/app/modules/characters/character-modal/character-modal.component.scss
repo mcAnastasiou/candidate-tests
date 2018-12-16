@@ -1,0 +1,69 @@
+@import 'helpers/functions';
+
+.modal-body {
+  padding: px-to-rem(20);
+
+  img {
+    width: px-to-rem(100);
+    height: px-to-rem(100);
+  }
+
+  label, p {
+    margin-bottom: 0;
+  }
+
+  label {
+    font-weight: bold;
+    margin-right: px-to-rem(10);
+  }
+
+  p {
+    display: inline-block;
+  }
+
+  .image-row {
+    position: relative;
+    height: px-to-rem(100);
+  }
+
+  .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: px-to-rem(100);
+    height: px-to-rem(100);
+    display: inline-block;
+  }
+
+  .side-image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: px-to-rem(100);
+    padding-left: px-to-rem(10);
+    width: calc(100% - #{px-to-rem(100)});
+    display: inline-block;
+  }
+
+  .character-details {
+    padding-top: px-to-rem(10);
+    & > div {
+      display: inline-block;
+    }
+
+    .left-column, .right-column {
+      width: 50%;
+      label, p {
+        display: block;
+      }
+    }
+  }
+
+  .character-episodes {
+    padding-top: px-to-rem(5);
+
+    label {
+      width: 100%;
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RootObject } from './models/root-object';
 import { map} from 'rxjs/operators';
+import { Episode } from './models/episode';
+import { Result } from './models/result';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +34,13 @@ export class CharactersService {
         return new RootObject();
       })
     );
+  }
+
+  getEpisodesOfCharacter(character: Result): Observable<Episode[]> {
+    const episodeGetRequests = character.episode.map((episodeUrl: string) => {
+      return this.httpClient.get(episodeUrl).pipe(map(result => <Episode>result));
+    });
+
+    return forkJoin(episodeGetRequests);
   }
 }

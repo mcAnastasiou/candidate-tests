@@ -19,7 +19,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let character of results;let i = index;">
+          <tr *ngFor="let character of results;let i = index;" (click)="onCharacterClicked(character)">
               <td class="align-middle">{{i + 1}}</td>
               <td class="align-middle">{{character.name}}</td>
               <td class="align-middle">{{character.status}}</td>

@@ -3,6 +3,9 @@ import { CharactersService } from '../characters.service';
 import { RootObject } from '../models/root-object';
 import { Result } from '../models/result';
 import { Info } from '../models/info';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CharacterModalComponent } from '../character-modal/character-modal.component';
+import { Episode } from '../models/episode';
 
 @Component({
   selector: 'rm-characters-list',
@@ -14,7 +17,7 @@ export class CharactersListComponent implements OnInit {
   info: Info;
   results: Result[];
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(private charactersService: CharactersService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.charactersService.getAllCharacters().subscribe((rootObject: RootObject) => {
@@ -36,6 +39,16 @@ export class CharactersListComponent implements OnInit {
 
   onNextClicked() {
     this.goToPage(this.info.next);
+  }
+
+  onCharacterClicked(character: Result) {
+    this.charactersService.getEpisodesOfCharacter(character).subscribe((result: Episode[]) => {
+      const modalRef = this.modalService.open(CharacterModalComponent);
+      modalRef.componentInstance.character = character;
+      modalRef.componentInstance.episodes = result;
+    }, (error) => {
+      console.log(`Error on getting episodes from character ${character.id}`);
+    });
   }
 
   private goToPage(page: string) {

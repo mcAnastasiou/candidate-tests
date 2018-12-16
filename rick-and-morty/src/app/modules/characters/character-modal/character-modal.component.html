@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{character.name}}</h4>
+</div>
+<div class="modal-body">
+    <div class="image-row">
+      <div class="image-wrapper">
+          <img class="image" [src]="character.image">
+      </div>
+      <div class="side-image-wrapper">
+        <div>
+            <label>Status:</label>
+            <p>{{character.status}}</p>
+        </div>
+        <div>
+            <label>Species:</label>
+            <p>{{character.species}}</p>
+        </div>
+        <div>
+            <label>Type:</label>
+            <p>{{character.type}}</p>
+        </div>
+        <div>
+            <label>Created:</label>
+            <p>{{character.created | date: 'dd/MM/yyyy'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="character-details">
+        <div class="left-column">
+            <label>Gender:</label>
+            <p>{{character.gender}}</p>
+        </div>
+        <div class="right-column">
+            <label>Origin:</label>
+            <p>{{character.origin?.name}}</p>
+        </div>
+        <div class="left-column">
+            <label>Location:</label>
+            <p>{{character.location?.name}}</p>
+        </div>
+    </div>
+    <div class="character-episodes">
+        <label>Episodes:</label>
+        <div *ngFor="let episode of pageEpisodes;let i = index;">
+            <span>{{getEpisodeIndex(i)}}. </span>
+            <span>{{episode.name}}</span>
+        </div>
+        <rm-pagination (prevClicked)="onPrevClicked()" (nextClicked)="onNextClicked()" [paginationInfo]="info"></rm-pagination>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
