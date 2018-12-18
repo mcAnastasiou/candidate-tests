@@ -1,0 +1,11 @@
+<div class="filters-wrapper">
+  <div class="filters-panel">
+    <div class="filter"><rm-gender-filter [selectedValue]="genderValue" (valueSelected)="onGenderSelected($event)"></rm-gender-filter></div>
+    <div class="filter"><rm-species-filter [selectedValue]="speciesValue" (valueSelected)="onSpeciesSelected($event)"></rm-species-filter> </div>
+    <div class="filter"><rm-status-filter [selectedValue]="statusValue" (valueSelected)="onStatusSelected($event)"></rm-status-filter></div>
+    <div class="button-wrapper">
+      <button class="btn btn-dark" type="button" (click)="onApplyClicked()">Apply</button>
+      <button class="btn btn-dark" type="button" (click)="onResetClicked()">Reset</button>
+    </div>
+  </div>
+</div>

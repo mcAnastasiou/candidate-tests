@@ -9,7 +9,7 @@
     background: #fff;
     text-align: center;
 
-    img {
+    ::ng-deep img {
       width: px-to-rem(60);
       height: px-to-rem(60);
     }

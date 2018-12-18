@@ -1,0 +1,36 @@
+@import 'helpers/functions';
+@import 'base/variables';
+
+.filters-wrapper {
+  padding: px-to-rem(15);
+
+  .filters-panel {
+    height: px-to-rem(110);
+    width: 95%;
+    background-color: #f2f2f2;
+    margin: auto;
+    border-radius: 20px;
+    padding: px-to-rem(20) px-to-rem(40);
+    margin-top: px-to-rem(10);
+
+    .filter {
+      width: 33.3%;
+      display: inline-block;
+
+      label {
+        font-weight: bold;
+      }
+    }
+
+    .button-wrapper {
+      padding-right: px-to-rem(20);
+
+      button {
+        float: right;
+        &:last-child {
+          margin-right: px-to-rem(5);
+        }
+      }
+    }
+  }
+}

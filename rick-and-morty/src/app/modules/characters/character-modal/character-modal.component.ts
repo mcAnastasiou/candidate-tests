@@ -3,7 +3,7 @@ import { Result } from '../models/result';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Episode } from '../models/episode';
 import { Info } from '../models/info';
-import { PagianationUtil } from 'src/app/utils/paginationUtil';
+import { PagianationUtil } from 'src/app/utils/pagination-util';
 
 @Component({
   selector: 'rm-character-modal',
