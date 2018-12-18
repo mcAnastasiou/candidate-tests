@@ -24,7 +24,7 @@ label {
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: $screen-width-868) {
+@media screen and (min-width: $screen-width-768 + 1) and (max-width: $screen-width-868) {
   .container {
     padding: px-to-rem(5) 0;
     label {
