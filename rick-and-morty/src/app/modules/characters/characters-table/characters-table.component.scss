@@ -1,17 +1,38 @@
 @import 'helpers/functions';
+@import 'base/variables';
 
 .table-wrapper {
   padding: px-to-rem(15);
 
   table {
+    &.table-responsive {
+      display: table;
+    }
     width: 95%;
     margin: auto;
     background: #fff;
     text-align: center;
 
-    ::ng-deep img {
+    img {
       width: px-to-rem(60);
       height: px-to-rem(60);
+    }
+  }
+}
+
+
+@media screen and (max-width: $screen-width-768) {
+  .table-wrapper {
+    table {
+      &.table-responsive {
+        display: block;
+      }
+      font-size: px-to-rem(14);
+
+      img {
+        width: px-to-rem(60);
+        height: px-to-rem(60);
+      }
     }
   }
 }

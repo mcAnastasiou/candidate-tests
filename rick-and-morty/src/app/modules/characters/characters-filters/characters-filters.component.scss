@@ -5,7 +5,7 @@
   padding: px-to-rem(15);
 
   .filters-panel {
-    height: px-to-rem(110);
+    height: px-to-rem(120);
     width: 95%;
     background-color: #f2f2f2;
     margin: auto;
@@ -23,6 +23,7 @@
     }
 
     .button-wrapper {
+      padding-top: px-to-rem(10);
       padding-right: px-to-rem(20);
 
       button {
@@ -34,3 +35,25 @@
     }
   }
 }
+
+@media screen and (max-width: $screen-width-768) {
+  .filters-wrapper {
+    .filters-panel {
+      height: px-to-rem(210);
+      padding: px-to-rem(10) px-to-rem(20);
+
+      .filter {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-width-768 + 1) and (max-width: $screen-width-868) {
+  .filters-wrapper {
+    .filters-panel {
+      height: px-to-rem(160);
+    }
+  }
+}
+

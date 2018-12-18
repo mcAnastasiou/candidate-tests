@@ -1,6 +1,38 @@
 @import 'helpers/functions';
+@import 'base/variables';
 
 label {
   font-weight: bold;
   padding-right: px-to-rem(10);
+}
+
+.dropdown-wrapper {
+  display: inline-block;
+}
+
+@media screen and (max-width: $screen-width-768) {
+  .container {
+    padding: px-to-rem(5) 0;
+    label {
+      width: 30%;
+    }
+
+    .dropdown-wrapper {
+      display: inline-block;
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: $screen-width-868) {
+  .container {
+    padding: px-to-rem(5) 0;
+    label {
+      width: 100%;
+    }
+
+    .dropdown-wrapper {
+      display: block;
+    }
+  }
 }

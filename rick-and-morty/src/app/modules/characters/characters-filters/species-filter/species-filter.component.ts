@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { BaseFilter } from '../base-filter';
 
 @Component({
