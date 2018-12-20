@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './core/error/error.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {
@@ -8,6 +9,9 @@ const appRoutes: Routes = [
   },
   {
     path: '', redirectTo: '/characters', pathMatch: 'full',
+  },
+  {
+    path: '**', component: PageNotFoundComponent,
   }
 ];
 

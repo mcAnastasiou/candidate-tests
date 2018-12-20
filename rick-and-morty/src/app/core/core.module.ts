@@ -8,6 +8,7 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ErrorsHandler } from './errors-handler';
 import { ErrorComponent } from './error/error.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import { ErrorComponent } from './error/error.component';
       multi: true
     }
   ],
-  declarations: [HeaderComponent, ErrorComponent],
-  exports: [HeaderComponent, ErrorComponent, NgxSpinnerModule]
+  declarations: [HeaderComponent, ErrorComponent, PageNotFoundComponent],
+  exports: [HeaderComponent, ErrorComponent, PageNotFoundComponent, NgxSpinnerModule]
 })
 export class CoreModule { }
