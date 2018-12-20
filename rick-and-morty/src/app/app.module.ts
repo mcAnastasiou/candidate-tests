@@ -5,10 +5,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CharactersModule } from './modules/characters/characters.module';
 import { AppRoutingModule } from './app-routing.module';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoaderInterceptor } from './interceptors/loader-interceptor';
-
 
 @NgModule({
   declarations: [
@@ -18,15 +14,7 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor';
     BrowserModule,
     CoreModule,
     CharactersModule,
-    AppRoutingModule,
-    NgxSpinnerModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor,
-      multi: true
-    }
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
